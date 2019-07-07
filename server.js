@@ -1,6 +1,7 @@
 'use strict';
 // list of currently connected clients (users)
 var clients = [];
+
 //Setup
 var http = require('http');
 var path = require('path');
