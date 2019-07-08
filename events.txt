@@ -1,0 +1,19 @@
+Dev plan:
+- index.html allows visitors to create a new room or join another one
+- Implement 2 html5audio elemnts in room.html
+	- Figure out cue mechanism and system for loading mp3s into browser elements
+- room.html is where the mixer and main UI is
+- program flow
+
+
+
+Types of events to emit:
+
+- loadTrack(trackID)
+- setCuePoint(trackID, time)
+- cue(channel, time)
+- play(time)
+- scrollThroughAudio
+- changeVolume(channel)
+- crossFade
+- fxUpdate(effect, value)

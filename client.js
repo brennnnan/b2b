@@ -1,7 +1,3 @@
-$(function () {
-	"use strict";
-
-    var input = $('#input');
 	var midiInput;
 	var midiOutput;
 	var channelCount = -1;
@@ -49,26 +45,8 @@ $(function () {
 		else loadServantInfoInterface();
 	})
 	
-	socket.on('adminNotification', function() {
-		masterButton.removeEventListener('click', rEvent, true);
-	})
+
 	
-	// Confirms landing page selection with server
-	// sends role as 'name' msg
-	function roleSelected(role) {
-		if(role===0) {
-			myName = 'admin'
-			var obj = {
-				role: 'admin'
-			}
-			socket.emit('name', obj);
-		} else if(role==1) {
-			var obj = {
-				role: 'servant'
-			}
-			socket.emit('name', obj);
-		}
-	}
     
     function loadAudio() {
         
@@ -89,7 +67,7 @@ $(function () {
       			console.log("WebMidi could not be enabled.", err);
 				loadSounds();
     		} else {
-				webMidiEnabled = 1;
+						webMidiEnabled = 1;
       			console.log("WebMidi enabled!");
       			console.log(WebMidi.inputs);
       			console.log(WebMidi.outputs);
