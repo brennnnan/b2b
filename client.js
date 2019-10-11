@@ -10,33 +10,30 @@
 
 	var socket = io();
 	if(socket) {
+    var delivery = new Delivery(socket);
 		// Display options
 	}
 
+  
 
-	
+	socket.on('loadTrack', function(trackID) {
+		
+	})
 
-	
-	socket.on('noteOn', function(noteInfo) {
-		if(displayEnabled && myName!='admin') {
-			if(noteInfo.note >= 0 && noteInfo.note < 128) {
-				history.push(noteInfo.note);
-				indicatorLight.style.background = "#E066FF";
-				notes[(noteInfo.note+2)%12].play();
-				//else midiOutput.playNote(noteInfo.note);
-			}
-		}
+	socket.on('syncLibrary', function(awsBucketURL) {
+		//download all tracks in aws bucket to local storage on disk
 	})
 	
-	socket.on('noteOff', function(noteInfo) {
-		if(displayEnabled && myName!='admin') {
-			if(noteInfo.note >= 0 && noteInfo.note < 128) {
-				indicatorLight.style.background = "#FFF";
-				if(!webMidiEnabled) midiOutput.stopNote(noteInfo.note)
-			}
-		}
-	})
-	
+
+	socket.on('setCuePoint', function(trackID, time) {
+		
+	}
+						
+	socket.on('cue', function(channel) {
+		
+	}
+
+
 	socket.on('receipt', function(receiptInfo) {
 		console.log('user is in group '+receiptInfo.group)
 		

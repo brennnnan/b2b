@@ -1,7 +1,7 @@
 Dev plan:
 - index.html allows visitors to create a new room or join another one
 - Implement 2 html5audio elemnts in room.html
-	- Figure out cue mechanism and system for loading mp3s into browser elements
+	¬ Figure out cue mechanism and system for loading mp3s into browser elements
 - room.html is where the mixer and main UI is
 - program flow
 
@@ -17,3 +17,26 @@ Types of events to emit:
 - changeVolume(channel)
 - crossFade
 - fxUpdate(effect, value)
+
+
+function mixer() {
+	new channel channel1;
+	new channel channel2;
+	bool xFadeOn;
+	int xfadePos;
+}
+
+
+function channel() {
+	int volFaderPos;
+	new trackLoaded;
+	new hipass;
+	new bandpass;
+	new lowpass;
+	bool cueButtonPressed;
+	int gainLevel;
+}
+
+function track() {
+	
+}
